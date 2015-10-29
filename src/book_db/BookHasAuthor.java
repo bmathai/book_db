@@ -16,4 +16,29 @@ public class BookHasAuthor {
     public int isbn;
     public int authorId;
     
+    
+    public BookHasAuthor(int isbn, int authorId){
+        boolean check = false;
+        for(int i = 0; i < bookHasAuthors.size(); i++){
+            BookHasAuthor temp = bookHasAuthors.get(i);
+            if(temp.isbn == isbn && temp.authorId == authorId){
+                check = true;
+            }
+        }
+        if(check == false){
+            this.isbn = isbn;
+            this.authorId = authorId;
+            bookHasAuthors.add(this);
+        }
+        
+    }
+    
+    
+    public static void importData(){
+        for(int x = 0; x < Book_db.tokens.size(); x++){
+            String[] temp = Book_db.tokens.get(x);
+            new BookHasAuthor(Integer.parseInt(temp[1]), Author.getId(temp[2], temp[3]));
+            
+        }
+    }
 }
