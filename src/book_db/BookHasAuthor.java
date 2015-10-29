@@ -5,10 +5,15 @@
  */
 package book_db;
 
+import java.util.*;
+
 /**
  *
  * @author alprocto
  */
 public class BookHasAuthor {
+    public static ArrayList<BookHasAuthor> bookHasAuthors = new ArrayList();
+    public int isbn;
+    public int authorId;
     
 }
