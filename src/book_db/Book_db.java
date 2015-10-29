@@ -44,8 +44,8 @@ public class Book_db {
             System.out.println(tokens.size()-1);
             //System.out.println(line); //test to see if reading file correctly
         }
-        
-        
+    Author.importData();
+    BookHasAuthor.importData();
         
         
         
