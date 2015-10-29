@@ -1,6 +1,5 @@
 -- Book Normalization --Again-- assignment
--- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm
--- Due on Thursday
+-- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor, Amanda Lail
 
 
 -- -----------------------------------------------------
@@ -20,7 +19,7 @@ drop table if exists author;
 -- Authors Table
 -- -----------------------------------------------------
 create table author(
-	authorId int not null,
+    authorId int not null,
     authorLname varchar(25) not null,
     authorFname varchar(25) not null,
     PRIMARY KEY (authorId)
@@ -30,7 +29,7 @@ create table author(
 -- Publishers Table
 -- -----------------------------------------------------
 create table publisher(
-	publisherName varchar(50) not null,
+    publisherName varchar(50) not null,
     publisherAdd varchar(50) not null,
 	PRIMARY KEY (publisherName)
 );
@@ -39,7 +38,7 @@ create table publisher(
 -- Books Table
 -- -----------------------------------------------------
 create table books(
-	isbn int not null,
+    isbn int not null,
     title varchar(50) not null,
     authorId int not null,
     publisherName varchar(50) not null,
@@ -47,8 +46,7 @@ create table books(
     copiesInStock int not null,
     publicationDate date not null,
     category varchar(25) not null,
-    sellingPrice int not null,
-    cost int not null,
+    cost double not null,
     FOREIGN KEY (authorId) REFERENCES author(authorId),
     FOREIGN KEY (publisherName) REFERENCES publisher(publisherName),
     PRIMARY KEY (isbn)
@@ -58,9 +56,14 @@ create table books(
 -- Books Has Authors Table
 -- -----------------------------------------------------
 create table bookhasauthor(
-	isbn int not null,
+    isbn int not null,
     authorId int not null,
     FOREIGN KEY (isbn) REFERENCES books(isbn),
     FOREIGN KEY (authorId) REFERENCES author(authorId),
     CONSTRAINT pk_BHAPK PRIMARY KEY (isbn, authorId)
 );
+
+-- -----------------------------------------------------
+-- Selling Price View
+-- -----------------------------------------------------
+create view sellingPrices as select isbn, 120*cost as sellingPrice from books;
