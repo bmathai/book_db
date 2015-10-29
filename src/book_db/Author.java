@@ -17,4 +17,14 @@ public class Author {
   public String authorLname;
   public String authorFname;
     
+  
+  public static int getId(String lastName, String firstName){
+      for(int i = 0; i<authors.size(); i++){
+          Author temp = authors.get(i);
+          if(temp.authorLname.equals(lastName) && temp.authorFname.equals(firstName)){
+              return temp.authorId;
+          }
+      }
+      return -1;
+  }
 }
