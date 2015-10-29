@@ -12,7 +12,8 @@ import java.util.*;
  * @author alprocto
  */
 public class Publisher {
-      public static ArrayList<Publisher> publishers = new ArrayList();
+    //blaise is doing this now
+  public static ArrayList<Publisher> publishers = new ArrayList();
   public String publisherName;
   public String publisherAdd;
 
