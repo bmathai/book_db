@@ -8,7 +8,6 @@ package book_db;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 
 /**
@@ -20,6 +19,9 @@ public class Book_db {
     /**
      * @param args the command line arguments
      */
+    
+    public static String[][] tokens = new String[100][20];
+    
     public static void main(String[] args) throws FileNotFoundException{
         String currentPath = "";
         final JFileChooser fc = new JFileChooser();
@@ -31,7 +33,6 @@ public class Book_db {
         String line = null;
         
         Scanner infile = new Scanner(new File(fileName));
-        String [][] tokens = new String[100][100];//initialize array
         String tokensArr[] = new String[100];
         int count = 0;
         while(infile.hasNextLine()) {
