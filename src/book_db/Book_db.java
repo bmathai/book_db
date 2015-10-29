@@ -11,7 +11,7 @@ import java.util.*;
 import javax.swing.JFileChooser;
 
 /**
- *Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor, Amanda Lail
+ * Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor, Amanda Lail
  * @author Sean
  */
 public class Book_db {

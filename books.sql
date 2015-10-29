@@ -5,7 +5,7 @@
 -- -----------------------------------------------------
 -- Use your database
 -- -----------------------------------------------------
--- use yourDB
+use kkazantsDB;
 
 -- -----------------------------------------------------
 -- Drop all tables if they exist
@@ -64,6 +64,16 @@ create table bookhasauthor(
 );
 
 -- -----------------------------------------------------
--- Selling Price View
+-- Placeholder table for view 'mydb'.'SellingPrices'
 -- -----------------------------------------------------
-create view sellingPrices as select isbn, 120*cost as sellingPrice from books;
+create table if not exists sellingPrices(
+    isbn int,
+    sellingPrice int
+);
+
+-- -----------------------------------------------------
+-- View SellingPrices
+-- -----------------------------------------------------
+drop table if exists sellingPrices;
+use kkazantsDB;
+create or replace view sellingPrices as select isbn, 120*cost as sellingPrice from books;
