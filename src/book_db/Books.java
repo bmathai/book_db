@@ -15,4 +15,13 @@ public class Books {
     public static ArrayList<Books> books = new ArrayList();
     public int isbn;
     public String title;
+    public int authorId;
+    public String publisherName;
+    public int totalCopiesOrdered;
+    public int copiesInStock;
+    public Date publicationDate;
+    public String category;
+    public double sellingPrice;
+    public double cost;
+    
 }
