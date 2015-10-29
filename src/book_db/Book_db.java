@@ -31,16 +31,30 @@ public class Book_db {
         String line = null;
         
         Scanner infile = new Scanner(new File(fileName));
-        
+        String [][] tokens = new String[100][100];//initialize array
+        String tokensArr[] = new String[100];
+        int count = 0;
         while(infile.hasNextLine()) {
             line = infile.nextLine();
+            System.out.println(line);
             //create array of individual entries without commas
-            String [] tokens = line.split(",");
-            for (String token : tokens) {
-                //add tokens to proper file, tab delimited
-            }
-            System.out.println(line); //test to see if reading file correctly
+            tokensArr = line.split(",");
+            System.out.println(tokensArr[0]);
+            tokens[count] = tokensArr;
+            count++;
+            System.out.println(count);
+            //System.out.println(line); //test to see if reading file correctly
         }
+        
+        //blaise's work for publishers table
+        System.out.println(tokens[0][0]);
+        System.out.println(tokens[0][1]);
+        System.out.println(tokens[0][2]);
+        System.out.println(tokens[0][3]);
+        System.out.println(tokens[2][0]);
+        System.out.println(tokens[1][1]);
+        
+        
         
         
     }
