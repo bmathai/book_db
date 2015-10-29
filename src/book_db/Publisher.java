@@ -13,9 +13,18 @@ import java.util.*;
  */
 public class Publisher {
     //blaise is doing this now
-  public static ArrayList<Publisher> publishers = new ArrayList();
+  public static ArrayList<String[]> publishers = new ArrayList();
   public String publisherName;
   public String publisherAdd;
-
+  
+  public void addToPublisher(){
+      //Book_db.tokens; 4 and 5
+      
+      for(int i = 0; i < Book_db.tokens.size(); i++){
+          publisherName = Book_db.tokens.get(i)[4];
+          publisherAdd = Book_db.tokens.get(i)[5];
+         // publishers.set(i, );
+      }
+  }
     
 }
