@@ -38,7 +38,7 @@ public class Book_db {
             System.out.println(line);
             //create array of individual entries without commas
             String tokensArr[];
-            tokensArr = line.split(",");
+            tokensArr = line.split(", ");
             System.out.println(tokensArr[0]);
             tokens.add(tokensArr);
             System.out.println(tokens.size()-1);
