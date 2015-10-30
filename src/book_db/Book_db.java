@@ -11,7 +11,7 @@ import java.util.*;
 import javax.swing.JFileChooser;
 
 /**
- * Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor, Amanda Lail
+ * Lucas Clarke, Konstantin Kazantsev, Blaise Mathai, Sean Stamm, Andrew Proctor, Amanda Lail
  * @author Sean
  */
 public class Book_db {
@@ -35,20 +35,24 @@ public class Book_db {
         Scanner infile = new Scanner(new File(fileName));
         while(infile.hasNextLine()) {
             line = infile.nextLine();
-            System.out.println(line);
+            //System.out.println(line);
             //create array of individual entries without commas
             String tokensArr[];
             tokensArr = line.split(", ");
-            System.out.println(tokensArr[0]);
+           //System.out.println(tokensArr[0]);
             tokens.add(tokensArr);
-            System.out.println(tokens.size()-1);
+            //System.out.println(tokens.size()-1);
             //System.out.println(line); //test to see if reading file correctly
         }
     Author.importData();
     BookHasAuthor.importData();
-        
-        
-        
+    Publisher pb = new Publisher();
+    System.out.println(pb.publishers.get(0)[0]);
+    System.out.println(pb.publishers.get(0)[1]);
+    System.out.println(pb.publishers.get(1)[0]);
+    System.out.println(pb.publishers.get(1)[1]);
+       
+    
     }
 }
     
