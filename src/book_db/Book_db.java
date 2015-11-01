@@ -11,7 +11,9 @@ import java.util.*;
 import javax.swing.JFileChooser;
 
 /**
- * Lucas Clarke, Konstantin Kazantsev, Blaise Mathai, Sean Stamm, Andrew Proctor, Amanda Lail
+ * Lucas Clarke, Konstantin Kazantsev, Blaise Mathai, Sean Stamm, Andrew
+ * Proctor, Amanda Lail
+ *
  * @author Sean
  */
 public class Book_db {
@@ -19,41 +21,42 @@ public class Book_db {
     /**
      * @param args the command line arguments
      */
-    
     public static ArrayList<String[]> tokens = new ArrayList();
-    
-    public static void main(String[] args) throws FileNotFoundException{
+
+    public static void main(String[] args) throws FileNotFoundException {
         String currentPath = "";
         final JFileChooser fc = new JFileChooser();
         if (fc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-                currentPath = fc.getSelectedFile().getAbsolutePath();
+            currentPath = fc.getSelectedFile().getAbsolutePath();
         }
-        
+
         String fileName = currentPath;
         String line = null;
-        
+
         Scanner infile = new Scanner(new File(fileName));
-        while(infile.hasNextLine()) {
+        while (infile.hasNextLine()) {
             line = infile.nextLine();
             //System.out.println(line);
             //create array of individual entries without commas
             String tokensArr[];
             tokensArr = line.split(", ");
-           //System.out.println(tokensArr[0]);
+            //System.out.println(tokensArr[0]);
             tokens.add(tokensArr);
             //System.out.println(tokens.size()-1);
             //System.out.println(line); //test to see if reading file correctly
         }
-    Author.importData();
-    BookHasAuthor.importData();
-    Publisher pb = new Publisher();
-    System.out.println(pb.publishers.get(0)[0]);
-    System.out.println(pb.publishers.get(0)[1]);
-    System.out.println(pb.publishers.get(1)[0]);
-    System.out.println(pb.publishers.get(1)[1]);
-       
-    
+        Author.importData();
+        BookHasAuthor.importData();
+        Publisher pb = new Publisher();
+        System.out.println(pb.publishers.get(0)[0]);
+        System.out.println(pb.publishers.get(0)[1]);
+        System.out.println(pb.publishers.get(1)[0]);
+        System.out.println(pb.publishers.get(1)[1]);
+
+        System.out.println(sqlInsertToString());
+    }
+
+    public static String sqlInsertToString() {
+        return Author.sqlInsertToString();
     }
 }
-    
-
