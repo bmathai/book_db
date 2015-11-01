@@ -50,8 +50,8 @@ public class Book_db {
         Publisher pb = new Publisher();
         System.out.println(pb.publishers.get(0)[0]);
         System.out.println(pb.publishers.get(0)[1]);
-        System.out.println(pb.publishers.get(1)[0]);
-        System.out.println(pb.publishers.get(1)[1]);
+        
+        System.out.println(Publisher.sqlInsertToString());
 
         System.out.println(sqlInsertToString());
     }
