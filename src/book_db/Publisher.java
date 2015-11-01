@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class Publisher {
     //blaise is doing this now
-  public ArrayList<String[]> publishers = new ArrayList();
+  public static ArrayList<String[]> publishers = new ArrayList();
   
   public Publisher(){
       for( int i = 0; i < Book_db.tokens.size(); i++){
