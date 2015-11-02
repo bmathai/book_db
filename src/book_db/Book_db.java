@@ -56,4 +56,3 @@ public class Book_db {
         return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString();
     }
 }
-
