@@ -43,8 +43,9 @@ public class BookHasAuthor {
     }
     
     
-//    public static String sqlToString(){
-//        //INSERT INTO BookHasAuthor (isbn, authorId) VALUES (temp[1], temp[2]);
-//        return isbn + ", " + authorId; 
-//    }
+    public static String sqlToString(){
+        //INSERT INTO BookHasAuthor (isbn, authorId) VALUES (temp[1], temp[2]);
+        return "isbn" + bookHasAuthors.get(1) + ", " + "authorId" + bookHasAuthors.get(2); 
+    }
+    
 }
