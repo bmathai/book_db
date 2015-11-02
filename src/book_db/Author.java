@@ -33,7 +33,7 @@ public class Author {
         if (allowDuplicateAuthor) {
             newAuthor.authorLname = lastName;
             newAuthor.authorFname = firstName;
-            newAuthor.authorId = authors.size();
+            newAuthor.authorId = authors.size() + 1;
             authors.add(newAuthor);
             return newAuthor.authorId;
         } else {
@@ -47,7 +47,7 @@ public class Author {
             if (!check) {
                 newAuthor.authorLname = lastName;
                 newAuthor.authorFname = firstName;
-                newAuthor.authorId = authors.size();
+                newAuthor.authorId = authors.size() + 1;
                 authors.add(newAuthor);
                 return newAuthor.authorId;
             }
@@ -61,6 +61,24 @@ public class Author {
             createAuthor(temp[2], temp[3], false);
 
         }
+    }
+
+    public static String sqlInsertToString() {
+        String output = new String();
+        output = "INSERT INTO\n"
+                + "author(authorId, authorLname, authorFname)\n"
+                + "VALUES ";
+
+        for (int i = 0; i < authors.size(); i++) {
+            Author temp = authors.get(i);
+            output = output + "(" + temp.authorId + ",'" + temp.authorLname + "','" + temp.authorFname + "')";
+            if (i == authors.size() - 1) {
+                output = output + ";";
+            } else {
+                output = output + ",\n";
+            }
+        }
+        return output;
     }
 
 }
