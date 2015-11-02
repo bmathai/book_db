@@ -60,4 +60,3 @@ public class Book_db {
         return Author.sqlInsertToString();
     }
 }
-
