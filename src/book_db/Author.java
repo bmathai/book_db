@@ -64,8 +64,7 @@ public class Author {
     }
 
     public static String sqlInsertToString() {
-        String output = new String();
-        output = "INSERT INTO\n"
+        String output = "INSERT INTO\n"
                 + "author(authorId, authorLname, authorFname)\n"
                 + "VALUES ";
 
