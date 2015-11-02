@@ -58,7 +58,8 @@ public class Books {
         
         for (int i = 0; i < books.size(); i++) {
             String[] temp = books.get(i);
-            output = output + "('" + temp[0] + "','" + temp[1] + "')";
+            output = output + "(" + temp[0] + ",'" + temp[1] + "','" + temp[2] + "','" 
+                  + temp[3] + "','" + temp[4] + "','" + temp[5] + "','" + temp[6] + "'," + temp[7] +")";
             if (i == books.size() - 1) {
                 output = output + ";";
             } else {
