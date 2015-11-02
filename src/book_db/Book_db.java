@@ -48,11 +48,12 @@ public class Book_db {
         Author.importData();
         BookHasAuthor.importData();
         new Publisher();
+        new Books();
         
         System.out.println(sqlInsertToString());
     }
 
     public static String sqlInsertToString() {
-        return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString();
+        return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString() + "\n\n" + Books.sqlInsertToString();
     }
 }

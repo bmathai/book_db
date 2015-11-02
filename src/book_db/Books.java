@@ -34,9 +34,9 @@ public class Books {
         temp[4] = Book_db.tokens.get(i)[6];
         temp[5] = Book_db.tokens.get(i)[8];
         temp[6] = Book_db.tokens.get(i)[9];
-        temp[7] = Book_db.tokens.get(i)[12];
+        temp[7] = Book_db.tokens.get(i)[11];
         if(!isCopy(temp)){
-            books.add(i, temp);
+            books.add(temp);
         }
       }
   }
