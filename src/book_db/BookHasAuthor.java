@@ -45,7 +45,21 @@ public class BookHasAuthor {
     
     public static String sqlToString(){
         //INSERT INTO BookHasAuthor (isbn, authorId) VALUES (temp[1], temp[2]);
-        return "isbn" + bookHasAuthors.get(1) + ", " + "authorId" + bookHasAuthors.get(2); 
+        String output = new String();
+        output = "INSERT INTO\n"
+                + "bookhasauthor(isbn, authorId)\n"
+                + "VALUES ";
+
+        for (int i = 0; i < bookHasAuthors.size(); i++) {
+            BookHasAuthor temp = bookHasAuthors.get(i);
+            output = output + "(" + temp.isbn + ",'" + temp.authorId + "')";
+            if (i == bookHasAuthors.size() - 1) {
+                output = output + ";";
+            } else {
+                output = output + ",\n";
+            }
+        }
+        return output;
     }
     
 }
