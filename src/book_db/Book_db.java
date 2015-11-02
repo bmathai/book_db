@@ -47,16 +47,13 @@ public class Book_db {
         }
         Author.importData();
         BookHasAuthor.importData();
-        Publisher pb = new Publisher();
-        System.out.println(pb.publishers.get(0)[0]);
-        System.out.println(pb.publishers.get(0)[1]);
+        new Publisher();
         
-        System.out.println(Publisher.sqlInsertToString());
-
         System.out.println(sqlInsertToString());
     }
 
     public static String sqlInsertToString() {
-        return Author.sqlInsertToString();
+        return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString();
     }
 }
+
