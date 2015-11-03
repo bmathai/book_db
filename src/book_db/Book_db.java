@@ -66,6 +66,6 @@ public class Book_db {
     }
 
     public static String sqlInsertToString() {
-        return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString() + "\n\n" + Books.sqlInsertToString() + "\n\n" + BookHasAuthor.sqlToString();
+        return Author.sqlInsertToString() + "\n\n" + Publisher.sqlInsertToString() + "\n\n" + Books.sqlInsertToString() + "\n\n" + BookHasAuthor.sqlInsertToString();
     }
 }
