@@ -1,5 +1,5 @@
 -- Book Normalization --Again-- assignment
--- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm
+-- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor
 -- Due on Thursday
 
 
@@ -40,16 +40,13 @@ create table publisher(
 -- -----------------------------------------------------
 create table books(
 	isbn int not null,
-    title varchar(50) not null,
-    authorId int not null,
+    title varchar(100) not null,
     publisherName varchar(50) not null,
     totalCopiesOrdered int not null,
     copiesInStock int not null,
     publicationDate date not null,
     category varchar(25) not null,
-    sellingPrice int not null,
-    cost int not null,
-    FOREIGN KEY (authorId) REFERENCES author(authorId),
+    cost decimal(10,2) not null,
     FOREIGN KEY (publisherName) REFERENCES publisher(publisherName),
     PRIMARY KEY (isbn)
 );
@@ -64,3 +61,8 @@ create table bookhasauthor(
     FOREIGN KEY (authorId) REFERENCES author(authorId),
     CONSTRAINT pk_BHAPK PRIMARY KEY (isbn, authorId)
 );
+
+-- -----------------------------------------------------
+-- View SellingPrices
+-- -----------------------------------------------------
+create or replace view sellingPrices as select isbn, format(1.20*cost, 2) as sellingPrice from books;
