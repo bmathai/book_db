@@ -7,6 +7,7 @@ package book_db;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.*;
 import javax.swing.JFileChooser;
 
@@ -50,7 +51,18 @@ public class Book_db {
         new Publisher();
         new Books();
         
-        System.out.println(sqlInsertToString());
+        fc.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
+        
+        currentPath= currentPath + ".insert.sql";
+        if (fc.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            currentPath = fc.getSelectedFile().getAbsolutePath();
+        }
+        
+        try (PrintWriter writer = new PrintWriter(currentPath)) {
+            writer.print(sqlInsertToString());
+        }
+    
+        
     }
 
     public static String sqlInsertToString() {

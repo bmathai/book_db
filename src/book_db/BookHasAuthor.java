@@ -52,7 +52,7 @@ public class BookHasAuthor {
 
         for (int i = 0; i < bookHasAuthors.size(); i++) {
             BookHasAuthor temp = bookHasAuthors.get(i);
-            output = output + "(" + temp.isbn + ",'" + temp.authorId + "')";
+            output = output + "(" + temp.isbn + "," + temp.authorId + ")";
             if (i == bookHasAuthors.size() - 1) {
                 output = output + ";";
             } else {
