@@ -39,7 +39,7 @@ public class Publisher {
   public static String sqlInsertToString() {
         String output = new String();
         output = "INSERT INTO\n"
-                + "author(publisherName, publisherAdd)\n"
+                + "publisher(publisherName, publisherAdd)\n"
                 + "VALUES ";
 
         for (int i = 0; i < publishers.size(); i++) {
