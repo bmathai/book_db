@@ -43,7 +43,7 @@ public class BookHasAuthor {
     }
     
     
-    public static String sqlToString(){
+    public static String sqlInsertToString(){
         //INSERT INTO BookHasAuthor (isbn, authorId) VALUES (temp[1], temp[2]);
         String output = new String();
         output = "INSERT INTO\n"
