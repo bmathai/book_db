@@ -64,3 +64,13 @@ create table bookhasauthor(
     FOREIGN KEY (authorId) REFERENCES author(authorId),
     CONSTRAINT pk_BHAPK PRIMARY KEY (isbn, authorId)
 );
+
+/* OR
+create view sellingPrices
+as
+select
+    isbn,
+    120*cost
+from
+    books;
+*/
