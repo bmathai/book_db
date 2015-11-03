@@ -1,0 +1,6 @@
+Counted isbn in books table ==> 5000 entries
+	select count(isbn) from books;
+counted isbn in bookhasauthor ==> 9593 entries
+	select count(isbn) from bookhasauthor;
+Make sure all tables have data. 
+Check few random lines in table and view for accuracy.

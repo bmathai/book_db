@@ -1,5 +1,5 @@
 -- Book Normalization --Again-- assignment
--- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor
+-- Lucas Clarke, Konstantin Kazantsev, Blaise Maathia, Sean Stamm, Andrew Proctor, Amanda Lail
 -- Due on Thursday
 
 
